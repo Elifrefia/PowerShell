@@ -10,7 +10,7 @@ Get-ChildItem -File | Where-Object {
          $BUSize += $_.Length
          $BUCount ++  
 
-         $FileName = [io.path]::GetFileNameWithoutExtension($_.Name)
+         $FileName = [io.path]::GetFileNameWithoutExtension($_.Name) #BaseName
          $FileType = [io.path]::GetExtension( $_.Name)
 
          $NewFileName = "Backup\$FileName" +"_" + $_.LastWriteTime.ToString("yyy-MM-dd") + $FileType
